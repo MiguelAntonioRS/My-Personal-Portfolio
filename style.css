@@ -166,3 +166,17 @@ body.light footer {
   background: #b71c1c;
   transform: scale(1.05);
 }
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #007acc;
+  object-fit: cover;
+}
