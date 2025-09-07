@@ -142,3 +142,27 @@ body.light .proj {
 body.light footer {
   color: var(--muted);
 }
+
+.cv-download {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #e63946;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-cv:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}
