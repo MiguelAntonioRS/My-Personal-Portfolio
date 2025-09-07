@@ -25,3 +25,16 @@ toggleBtn.addEventListener("click", () => {
     toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
   }
 });
+  // Typing effect
+  const text = "Hi, I'm Miguel Antonio";
+  const typingElement = document.getElementById("typing");
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      typingElement.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 130); // velocidad (ms)
+    }
+  }
+  type();

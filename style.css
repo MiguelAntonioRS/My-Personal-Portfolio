@@ -180,3 +180,18 @@ body.light footer {
   border: 3px solid #007acc;
   object-fit: cover;
 }
+.skill {
+  background: rgba(99, 102, 241, .1);
+  border: 1px solid var(--primary);
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: .3s ease-in-out;
+  cursor: default;
+}
+
+.skill:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-3px) rotate(3deg);
+  box-shadow: 0 0 15px var(--primary);
+}
