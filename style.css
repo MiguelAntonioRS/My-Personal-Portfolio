@@ -299,3 +299,39 @@ body.light {
   opacity: 1;
   transform: translateY(0);
 }
+#testimonials {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+.testimonial {
+  background: rgba(99,102,241,.1);
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.testimonial p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.testimonial span {
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 0.9rem;
+}

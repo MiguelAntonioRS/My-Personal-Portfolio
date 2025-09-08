@@ -74,3 +74,21 @@ sections.forEach(section => {
   section.classList.add("hidden-section");
   observer.observe(section);
 });
+const testimonials = document.querySelectorAll('.testimonial');
+
+const revealTestimonials = () => {
+  testimonials.forEach(testimonial => {
+    const windowHeight = window.innerHeight;
+    const elementTop = testimonial.getBoundingClientRect().top;
+    const revealPoint = 150;
+
+    if(elementTop < windowHeight - revealPoint){
+      testimonial.classList.add('active');
+    } else {
+      testimonial.classList.remove('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealTestimonials);
+revealTestimonials(); // Para que cargue en la primera vista
