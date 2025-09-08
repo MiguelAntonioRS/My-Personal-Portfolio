@@ -38,3 +38,19 @@ toggleBtn.addEventListener("click", () => {
     }
   }
   type();
+
+  // Scroll reveal
+function revealOnScroll() {
+  const reveals = document.querySelectorAll(".reveal");
+  for (let el of reveals) {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const elementVisible = 100; // margen antes de mostrar
+    if (elementTop < windowHeight - elementVisible) {
+      el.classList.add("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll(); // ejecutar en carga inicial
