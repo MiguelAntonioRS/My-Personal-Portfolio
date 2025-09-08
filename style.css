@@ -205,6 +205,10 @@ body.light footer {
   align-items: center;
   gap: 20px;
   padding: 40px;
+  flex-wrap: wrap;
+}
+.hero div {
+  flex: 1 1 250px;
 }
 .profile-pic {
   width: 150px;
@@ -212,6 +216,21 @@ body.light footer {
   border-radius: 50%;
   border: 3px solid #007acc;
   object-fit: cover;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column; /* Coloca la imagen arriba y texto abajo en pantallas pequeñas */
+    text-align: center;
+  }
+  .hero div {
+    flex: 1 1 auto;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+  }
 }
 .skill:hover {
   background: var(--primary);
