@@ -251,3 +251,23 @@ body.light footer {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+body {
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #0f172a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Fondo claro con gradiente animado */
+body.light {
+  background: linear-gradient(-45deg, #f8fafc, #e0f2fe, #dbeafe, #f1f5f9);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
