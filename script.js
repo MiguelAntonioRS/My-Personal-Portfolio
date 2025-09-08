@@ -92,3 +92,24 @@ const revealTestimonials = () => {
 
 window.addEventListener('scroll', revealTestimonials);
 revealTestimonials(); // Para que cargue en la primera vista
+
+// Loader typing effect
+const loaderText = document.getElementById("loader-text");
+const loaderMessage = "WELCOME TO MY PORTFOLIO";
+let loaderIndex = 0;
+
+function typeLoader() {
+  if(loaderIndex < loaderMessage.length) {
+    loaderText.textContent += loaderMessage.charAt(loaderIndex);
+    loaderIndex++;
+    setTimeout(typeLoader, 150);
+  } else {
+    // Fade out after typing
+    setTimeout(() => {
+      document.getElementById("loader").classList.add("fade-out");
+    }, 500); // 0.5s after finished typing
+  }
+}
+
+// Start loader typing on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", typeLoader);

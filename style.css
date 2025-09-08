@@ -335,3 +335,32 @@ body.light {
   color: var(--secondary);
   font-size: 0.9rem;
 }
+/* Loader overlay */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Loader text */
+#loader-text {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* Fade-out animation */
+#loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
