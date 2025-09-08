@@ -147,7 +147,7 @@ footer{
 /* === Botón modo oscuro/claro === */
 #themeToggle {
   position: absolute;
-  top: 20px;
+  top: 60px;
   right: 20px;
   background: #fff;
   border: none;
