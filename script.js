@@ -95,7 +95,7 @@ revealTestimonials(); // Para que cargue en la primera vista
 
 // Loader typing effect
 const loaderText = document.getElementById("loader-text");
-const loaderMessage = "TO MY PORTFOLIO";
+const loaderMessage = "WELCOME TO MY PORTFOLIO";
 let loaderIndex = 0;
 
 function typeLoader() {
