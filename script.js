@@ -54,3 +54,23 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll(); // ejecutar en carga inicial
+
+const sections = document.querySelectorAll("section");
+
+const options = {
+  threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show-section");
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+sections.forEach(section => {
+  section.classList.add("hidden-section");
+  observer.observe(section);
+});

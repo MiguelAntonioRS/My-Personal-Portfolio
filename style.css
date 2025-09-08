@@ -289,3 +289,13 @@ body.light {
   opacity: 1;
   transform: translateX(0) translateY(0) scale(1);
 }
+.hidden-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.show-section {
+  opacity: 1;
+  transform: translateY(0);
+}
