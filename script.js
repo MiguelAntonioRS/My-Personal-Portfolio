@@ -217,11 +217,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if(loaderIndex < loaderMessage.length) {
       loaderText.textContent += loaderMessage.charAt(loaderIndex);
       loaderIndex++;
-      setTimeout(typeLoader, 150);
+      setTimeout(typeLoader, 50);
     } else {
       setTimeout(() => {
         document.getElementById("loader").classList.add("fade-out");
-      }, 500);
+      }, 300);
     }
   }
 
