@@ -401,3 +401,8 @@ body.light {
   background: var(--secondary);
   color: #fff;
 }
+.greeting {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+}
