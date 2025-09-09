@@ -387,3 +387,24 @@ body.light {
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
+#langToggle {
+  position: absolute;
+  top: 150px; /* debajo del botón de tema */
+  right: 20px;
+  background: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform .3s, background .3s;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#langToggle:hover {
+  transform: scale(1.05);
+  background: var(--secondary);
+  color: #fff;
+}
