@@ -133,15 +133,20 @@ footer{
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: var(--primary);
-  color: #fff;
+  width: 50px;
+  height: 50px;
+  background: var(--primary); /* Azul, cámbialo si quieres */
+  color: white;
   border: none;
-  padding: 12px;
-  border-radius: 50%;
+  border-radius: 50%; /* 🎯 lo hace redondo */
   cursor: pointer;
-  font-size: 1.2rem;
-  display: none;
-  transition: .3s;
+  font-size: 20px;
+  display: none; /* Se muestra solo con scroll */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1000;
 }
 #backToTop:hover {
   background: var(--secondary);
