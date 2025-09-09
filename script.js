@@ -1,4 +1,6 @@
-// Diccionario de traducciones
+// =========================
+// 🌐 Translations Dictionary
+// =========================
 const translations = {
   ES: {
     langBtn: "ES",
@@ -86,16 +88,68 @@ const translations = {
   }
 };
 
+// =========================
+// 🌍 Global State
+// =========================
 let currentLang = localStorage.getItem('language') || 'EN';
 
+// 🔒 Control de typing para evitar bugs con clicks rápidos
+let greetingTypingTimer = null;
+let isTypingGreeting = false;
+
+// =========================
+// ⌨️ Typing Helper
+// =========================
+function startGreetingTyping(text, elId = "typing", speed = 110) {
+  const el = document.getElementById(elId);
+  const langBtn = document.getElementById("langToggle");
+  if (!el) return;
+
+  // Cancelar typing anterior
+  if (greetingTypingTimer) {
+    clearTimeout(greetingTypingTimer);
+    greetingTypingTimer = null;
+  }
+
+  // Desactivar botón mientras se escribe
+  isTypingGreeting = true;
+  if (langBtn) {
+    langBtn.disabled = true;
+    langBtn.classList.add("disabled");
+  }
+
+  el.textContent = "";
+  let i = 0;
+
+  function step() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      greetingTypingTimer = setTimeout(step, speed);
+    } else {
+      isTypingGreeting = false;
+      if (langBtn) {
+        langBtn.disabled = false;
+        langBtn.classList.remove("disabled");
+      }
+      greetingTypingTimer = null;
+    }
+  }
+
+  step();
+}
+
+// =========================
+// 🌐 Change Language
+// =========================
 function changeLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('language', lang);
 
-  // Cambiar texto de botón de idioma
+  // Botón de idioma
   document.querySelector('[data-key="langBtn"]').textContent = lang;
 
-  // Actualizar todos los elementos traducibles
+  // Textos traducibles
   document.querySelectorAll('.lang').forEach(element => {
     const key = element.getAttribute('data-key');
     if (translations[lang][key]) {
@@ -107,35 +161,28 @@ function changeLanguage(lang) {
     }
   });
 
-  // Reiniciar typing effect con el saludo correcto
-  const typingElement = document.getElementById("typing");
-  typingElement.textContent = ""; // Limpiar
+  // Reiniciar typing con el saludo correcto
   const greeting = lang === 'ES' ? "Hola, soy Miguel Antonio" : "Hi, I'm Miguel Antonio";
-  let i = 0;
-
-  function typeGreeting() {
-    if (i < greeting.length) {
-      typingElement.textContent += greeting.charAt(i);
-      i++;
-      setTimeout(typeGreeting, 130);
-    }
-  }
-  setTimeout(typeGreeting, 500); // Pequeño delay para sincronizar
+  startGreetingTyping(greeting, "typing", 110);
 }
 
-// Evento para el botón de cambio de idioma
+// =========================
+// 📌 DOM Ready
+// =========================
 document.addEventListener("DOMContentLoaded", () => {
+  // Botón idioma
   document.getElementById("langToggle").addEventListener("click", () => {
+    if (isTypingGreeting) return; // protección extra
     const newLang = currentLang === 'EN' ? 'ES' : 'EN';
     changeLanguage(newLang);
   });
 
-  // Aplicar idioma guardado al cargar
+  // Idioma inicial
   changeLanguage(currentLang);
 
-  // Resto de tu código existente
   console.log("Portfolio cargado correctamente 🚀");
 
+  // Botón "Back to Top"
   const btnTop = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
     btnTop.style.display = window.scrollY > 300 ? "block" : "none";
@@ -147,16 +194,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Toggle modo oscuro/claro
   const toggleBtn = document.getElementById("themeToggle");
   const body = document.body;
-
   toggleBtn.addEventListener("click", () => {
     body.classList.toggle("light");
-
-    // Cambiar ícono
-    if (body.classList.contains("light")) {
-      toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
-      toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-    }
+    toggleBtn.innerHTML = body.classList.contains("light")
+      ? '<i class="fas fa-moon"></i>'
+      : '<i class="fas fa-sun"></i>';
   });
 
   // Scroll reveal
@@ -171,40 +213,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
 
+  // Secciones animadas
   const sections = document.querySelectorAll("section");
   const options = { threshold: 0.2 };
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if (entry.isIntersecting) {
         entry.target.classList.add("show-section");
         observer.unobserve(entry.target);
       }
     });
   }, options);
-
   sections.forEach(section => {
     section.classList.add("hidden-section");
     observer.observe(section);
   });
 
+  // Testimonials
   const testimonials = document.querySelectorAll('.testimonial');
   const revealTestimonials = () => {
     testimonials.forEach(testimonial => {
       const windowHeight = window.innerHeight;
       const elementTop = testimonial.getBoundingClientRect().top;
       const revealPoint = 150;
-      if(elementTop < windowHeight - revealPoint){
+      if (elementTop < windowHeight - revealPoint) {
         testimonial.classList.add('active');
       } else {
         testimonial.classList.remove('active');
       }
     });
   }
-
   window.addEventListener('scroll', revealTestimonials);
   revealTestimonials();
 
@@ -214,16 +255,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let loaderIndex = 0;
 
   function typeLoader() {
-    if(loaderIndex < loaderMessage.length) {
+    if (loaderIndex < loaderMessage.length) {
       loaderText.textContent += loaderMessage.charAt(loaderIndex);
       loaderIndex++;
-      setTimeout(typeLoader, 50);
+      setTimeout(typeLoader, 90); // ⏩ más rápido para móviles
     } else {
       setTimeout(() => {
         document.getElementById("loader").classList.add("fade-out");
       }, 300);
     }
   }
-
   typeLoader();
 });
