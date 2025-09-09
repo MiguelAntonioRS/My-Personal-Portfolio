@@ -6,7 +6,7 @@ const translations = {
     langBtn: "ES",
     heroDesc: "Desarrollador especializado en Java (Spring Boot) y Python (Django). Apasionado por construir soluciones eficientes y creativas.",
     aboutTitle: "Sobre Mí",
-    aboutDesc: "Miguel es un programador que combina experiencia en backend con pasión por el aprendizaje continuo. Ha trabajado en sistemas de gestión, aplicaciones en tiempo real y proyectos de e-commerce. Su objetivo es construir software robusto y accesible que aporte valor real.",
+    aboutDesc: "Soy un programador que combina experiencia en backend con pasión por el aprendizaje continuo. He trabajado en sistemas de gestión, aplicaciones en tiempo real y proyectos de e-commerce. Mi objetivo es construir software robusto y accesible que aporte valor real.",
     skillsTitle: "Habilidades",
     projectsTitle: "Proyectos",
     testimonialsTitle: "Logros y Contribuciones",
@@ -48,7 +48,7 @@ const translations = {
     langBtn: "EN",
     heroDesc: "Developer specialized in Java (Spring Boot) and Python (Django). Passionate about building efficient and creative solutions.",
     aboutTitle: "About Me",
-    aboutDesc: "Miguel is a programmer who combines backend experience with a passion for continuous learning. He has worked on management systems, real-time applications, and e-commerce projects. His goal is to build robust and accessible software that provides real value.",
+    aboutDesc: "I am a programmer who combines backend experience with a passion for continuous learning. I have worked on management systems, real-time applications, and e-commerce projects. My goal is to build robust and accessible software that provides real value.",
     skillsTitle: "Skills",
     projectsTitle: "Projects",
     testimonialsTitle: "Achievements & Contributions",
@@ -102,20 +102,12 @@ let isTypingGreeting = false;
 // =========================
 function startGreetingTyping(text, elId = "typing", speed = 110) {
   const el = document.getElementById(elId);
-  const langBtn = document.getElementById("langToggle");
   if (!el) return;
 
   // Cancelar typing anterior
   if (greetingTypingTimer) {
     clearTimeout(greetingTypingTimer);
     greetingTypingTimer = null;
-  }
-
-  // Desactivar botón mientras se escribe
-  isTypingGreeting = true;
-  if (langBtn) {
-    langBtn.disabled = true;
-    langBtn.classList.add("disabled");
   }
 
   el.textContent = "";
@@ -127,11 +119,6 @@ function startGreetingTyping(text, elId = "typing", speed = 110) {
       i++;
       greetingTypingTimer = setTimeout(step, speed);
     } else {
-      isTypingGreeting = false;
-      if (langBtn) {
-        langBtn.disabled = false;
-        langBtn.classList.remove("disabled");
-      }
       greetingTypingTimer = null;
     }
   }

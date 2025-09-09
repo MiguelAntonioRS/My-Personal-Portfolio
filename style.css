@@ -423,3 +423,21 @@ body.light {
   max-width: 90%;
   word-wrap: break-word; /* Evita desbordes */
 }
+#themeToggle, #langToggle {
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#themeToggle:hover, #langToggle:hover {
+  transform: scale(1.05);
+  background: var(--secondary);
+  color: #fff;
+}
