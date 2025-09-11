@@ -262,15 +262,14 @@ const closeMenu = document.getElementById('close-menu');
 if (hamburger && mobileMenu && closeMenu) {
   hamburger.addEventListener('click', () => {
     mobileMenu.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Evita scroll cuando el menú está abierto
+    document.body.style.overflow = 'hidden';
   });
 
   closeMenu.addEventListener('click', () => {
     mobileMenu.classList.remove('active');
-    document.body.style.overflow = ''; // Restaura scroll
+    document.body.style.overflow = '';
   });
 
-  // También cerrar al hacer clic fuera del menú
   mobileMenu.addEventListener('click', (e) => {
     if (e.target === mobileMenu) {
       mobileMenu.classList.remove('active');
