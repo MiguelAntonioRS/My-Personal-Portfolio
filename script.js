@@ -307,3 +307,18 @@ if (langToggleMobile) {
     }
   });
 }
+
+// Cerrar menú móvil cuando se pulsa un link (evita que el overlay quede activo)
+document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = ''; // restaurar scroll
+    }
+  });
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+  });
+});

@@ -572,3 +572,81 @@ body.light .proj {
     display: none;
   }
 }
+/* ---------- FIX: Navbar dropdown visible y fondo sólido ---------- */
+/* Variable para color del navbar (ya la tienes arriba, pero por si acaso) */
+:root {
+  --navbar-bg-rgb: 15, 23, 42;
+}
+
+/* Forzar fondo del navbar (no cambia con body.light) */
+.navbar {
+  background: rgba(var(--navbar-bg-rgb), 0.95) !important;
+}
+
+/* Forzar color de texto del navbar (siempre blanco) */
+.navbar,
+.navbar .nav-links a,
+.navbar .nav-brand,
+.nav-actions button,
+.desktop-only .nav-links a {
+  color: #fff !important;
+}
+
+/* Estilos para cuando la ul se muestre en columna (drop-down responsive) */
+@media (max-width: 767px) {
+  .navbar .nav-links {
+    position: absolute;
+    top: 60px;           /* ajusta si tu navbar es más alto */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(var(--navbar-bg-rgb), 0.98);
+    padding: 8px 0;
+    gap: 0;
+    z-index: 1500;
+    box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  }
+
+  .navbar .nav-links a {
+    display: block;
+    padding: 12px 18px;
+    color: #fff !important;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .navbar .nav-links a:hover{
+    background: rgba(255,255,255,0.04);
+  }
+
+  /* Si usas .nav-brand en la izquierda, evitar que tape el menú */
+  .nav-brand { z-index: 1600; }
+}
+
+/* ---------- FIX: Menú lateral móvil (mobile-menu) ---------- */
+.mobile-menu {
+  background: rgba(var(--navbar-bg-rgb), 1) !important; /* fondo sólido */
+  color: #fff;
+  z-index: 2000;
+}
+
+/* Forzar color de los links dentro del menú lateral */
+.mobile-menu .mobile-nav-links a {
+  color: #fff !important;
+}
+
+/* Mejor contraste para el dropdown del CV */
+.dropdown-content {
+  background: rgba(15,23,42,0.98) !important;
+}
+
+/* Asegurar que botones de tema/idioma mantengan estilo visible */
+#themeToggle, #langToggle, .mobile-nav-actions button {
+  color: var(--primary) !important;
+  background: #fff !important;
+}
+
+/* Opcional: hace la transición del mobile-menu un poco más suave */
+.mobile-menu, .mobile-menu.active {
+  transition: right 0.28s cubic-bezier(.2,.9,.3,1), background .2s;
+}
