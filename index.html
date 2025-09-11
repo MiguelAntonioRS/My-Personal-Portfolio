@@ -18,23 +18,59 @@
   <!-- ✅ Header -->
   <header>
     <!-- ✅ Navbar con botones integrados -->
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#about" class="lang" data-key="navAbout">About</a></li>
-        <li><a href="#skills" class="lang" data-key="navSkills">Skills</a></li>
-        <li><a href="#projects" class="lang" data-key="navProjects">Projects</a></li>
-        <li><a href="#testimonials" class="lang" data-key="navAchievements">Achievements</a></li>
-        <li><a href="#contact" class="lang" data-key="navContact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button id="themeToggle" title="Change theme">
-          <i class="fas fa-sun"></i>
+    <!-- ✅ Navbar con menú hamburguesa para móvil -->
+  <nav class="navbar">
+    <!-- Logo / Nombre (opcional) -->
+    <div class="nav-brand">
+      <span class="lang" data-key="navBrand">Miguel Antonio</span>
+    </div>
+
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Overlay del menú lateral -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-content">
+        <button id="close-menu" class="close-menu" aria-label="Close menu">
+          <i class="fas fa-times"></i>
         </button>
-        <button id="langToggle" title="Cambiar idioma">
-          <i class="fas fa-globe"></i> <span class="lang" data-key="langBtn">ES</span>
-        </button>
+        <ul class="mobile-nav-links">
+          <li><a href="#about" class="lang" data-key="navAbout">About</a></li>
+          <li><a href="#skills" class="lang" data-key="navSkills">Skills</a></li>
+          <li><a href="#projects" class="lang" data-key="navProjects">Projects</a></li>
+          <li><a href="#testimonials" class="lang" data-key="navAchievements">Achievements</a></li>
+          <li><a href="#contact" class="lang" data-key="navContact">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-actions">
+          <button id="themeToggleMobile" title="Change theme">
+            <i class="fas fa-sun"></i>
+          </button>
+          <button id="langToggleMobile" title="Cambiar idioma">
+            <i class="fas fa-globe"></i> <span class="lang" data-key="langBtn">ES</span>
+          </button>
+        </div>
       </div>
-    </nav>
+    </div>
+
+    <!-- Navbar para escritorio -->
+    <ul class="nav-links desktop-only">
+      <li><a href="#about" class="lang" data-key="navAbout">About</a></li>
+      <li><a href="#skills" class="lang" data-key="navSkills">Skills</a></li>
+      <li><a href="#projects" class="lang" data-key="navProjects">Projects</a></li>
+      <li><a href="#testimonials" class="lang" data-key="navAchievements">Achievements</a></li>
+      <li><a href="#contact" class="lang" data-key="navContact">Contact</a></li>
+    </ul>
+    <div class="nav-actions desktop-only">
+      <button id="themeToggle" title="Change theme">
+        <i class="fas fa-sun"></i>
+      </button>
+      <button id="langToggle" title="Cambiar idioma">
+        <i class="fas fa-globe"></i> <span class="lang" data-key="langBtn">ES</span>
+      </button>
+    </div>
+  </nav>
 
     <section class="hero">
         <img src="assets/profile.jpg" alt="Miguel Antonio" class="profile-pic" loading="lazy">
