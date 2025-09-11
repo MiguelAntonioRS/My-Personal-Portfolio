@@ -434,13 +434,17 @@ body.light .proj {
   justify-content: center;
   align-items: center;
   z-index: 2000;
+  padding: 0 20px;
 }
 #loader-text {
   color: var(--primary);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 8vw, 3rem); /* ¡Clave! Se adapta al ancho */
   font-weight: 700;
   letter-spacing: 2px;
-  white-space: nowrap;
+  text-align: center;
+  white-space: normal; /* Permite saltos de línea */
+  line-height: 1.2;
+  max-width: 90%;
 }
 #loader.fade-out {
   opacity: 0;
