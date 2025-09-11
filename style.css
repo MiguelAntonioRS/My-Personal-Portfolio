@@ -10,7 +10,6 @@ body.light {
   --bg: #f8fafc;
   --text: #1e293b;
   --muted: #64748b;
-  --navbar-bg-rgb: 248, 250, 252; /* modo claro */
 }
 * {
   box-sizing: border-box;
@@ -418,6 +417,10 @@ footer {
   font-weight: 600;
   color: var(--secondary);
   font-size: 0.9rem;
+}
+body.light .proj {
+  background: #fff;
+  border: 1px solid #e2e8f0;
 }
 /* Loader */
 #loader {
