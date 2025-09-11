@@ -447,3 +447,122 @@ body.light .proj {
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
+/* ===== Menú Hamburguesa y Menú Lateral para Móvil ===== */
+
+/* Botón hamburguesa */
+.hamburger {
+  display: none; /* Solo visible en móvil */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+/* Menú lateral */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Fuera de pantalla */
+  width: 280px;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+}
+
+.mobile-menu.active {
+  right: 0; /* Desliza hacia dentro */
+}
+
+.mobile-menu-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.close-menu {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.mobile-nav-links li {
+  margin-bottom: 15px;
+}
+
+.mobile-nav-links a {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.mobile-nav-links a:hover {
+  background: rgba(99, 102, 241, 0.2);
+  color: #6366F1;
+}
+
+.mobile-nav-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.mobile-nav-actions button {
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6366F1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.mobile-nav-actions button:hover {
+  background: #6366F1;
+  color: #fff;
+}
+
+/* Ocultar elementos en móvil */
+@media (max-width: 767px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Mostrar navbar horizontal en escritorio */
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
