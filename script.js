@@ -254,3 +254,57 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   typeLoader();
 });
+// Menú hamburguesa móvil
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+
+if (hamburger && mobileMenu && closeMenu) {
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Evita scroll cuando el menú está abierto
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = ''; // Restaura scroll
+  });
+
+  // También cerrar al hacer clic fuera del menú
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// Sincronizar botones de tema e idioma en móvil
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+const langToggleMobile = document.getElementById('langToggleMobile');
+
+if (themeToggleMobile) {
+  themeToggleMobile.addEventListener('click', () => {
+    const body = document.body;
+    body.classList.toggle('light');
+    const icon = body.classList.contains('light') ? 'fa-moon' : 'fa-sun';
+    themeToggleMobile.innerHTML = `<i class="fas ${icon}"></i>`;
+    // También actualizar el botón de escritorio si existe
+    const desktopToggle = document.getElementById('themeToggle');
+    if (desktopToggle) {
+      desktopToggle.innerHTML = `<i class="fas ${icon}"></i>`;
+    }
+  });
+}
+
+if (langToggleMobile) {
+  langToggleMobile.addEventListener('click', () => {
+    const newLang = currentLang === 'EN' ? 'ES' : 'EN';
+    changeLanguage(newLang);
+    // También actualizar el botón de escritorio
+    const desktopLangBtn = document.querySelector('#langToggle .lang[data-key="langBtn"]');
+    if (desktopLangBtn) {
+      desktopLangBtn.textContent = newLang;
+    }
+  });
+}
