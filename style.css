@@ -472,11 +472,13 @@ body.light .proj {
   right: -300px; /* Fuera de pantalla */
   width: 280px;
   height: 100%;
-  background: rgba(15, 23, 42, 0.98);
+  background: #0f172a; /* Fondo sólido oscuro */
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
   z-index: 2000;
   transition: right 0.3s ease;
   box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  border-left: 1px solid rgba(99, 102, 241, 0.3);
 }
 
 .mobile-menu.active {
