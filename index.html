@@ -17,15 +17,23 @@
 
   <!-- ✅ Header -->
   <header>
-    <!-- ✅ Navbar -->
+    <!-- ✅ Navbar con botones integrados -->
     <nav class="navbar">
-      <ul>
+      <ul class="nav-links">
         <li><a href="#about" class="lang" data-key="navAbout">About</a></li>
         <li><a href="#skills" class="lang" data-key="navSkills">Skills</a></li>
         <li><a href="#projects" class="lang" data-key="navProjects">Projects</a></li>
         <li><a href="#testimonials" class="lang" data-key="navAchievements">Achievements</a></li>
         <li><a href="#contact" class="lang" data-key="navContact">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" title="Change theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button id="langToggle" title="Cambiar idioma">
+          <i class="fas fa-globe"></i> <span class="lang" data-key="langBtn">ES</span>
+        </button>
+      </div>
     </nav>
 
     <section class="hero">
@@ -38,23 +46,14 @@
             </p> 
         </div>
     </section>
-
-    <button id="themeToggle" title="Change theme">
-        <i class="fas fa-sun"></i>
-    </button> 
-
-    <button id="langToggle" title="Cambiar idioma">
-        <i class="fas fa-globe"></i> <span class="lang" data-key="langBtn">ES</span>
-    </button>
-
   </header>
 
   <div class="container">
     <section id="about" class="reveal reveal-left">
       <h2 class="lang" data-key="aboutTitle">About Me</h2>
       <p class="fade-in lang" data-key="aboutDesc" style="animation-delay:.2s">
-        Miguel is a programmer who combines backend experience with a passion for continuous learning. 
-        He has worked on management systems, real-time applications, and e-commerce projects. His goal is to build 
+        I am a programmer who combines backend experience with a passion for continuous learning. 
+        I have worked on management systems, real-time applications, and e-commerce projects. My goal is to build 
         robust and accessible software that provides real value.
       </p>
     </section>
