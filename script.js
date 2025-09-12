@@ -23,10 +23,10 @@ const translations = {
     navContact: "Contacto",
 
     // Proyectos
-    proj1Title: "Gestión PDF y Excel",
-    proj1Desc: "Aplicación de gestión que permite exportar datos en formatos PDF y Excel.",
-    proj2Title: "Juego Space Invaders",
-    proj2Desc: "Juego clásico en Java centrado en lógica gráfica y jugabilidad.",
+    proj1Title: "Proyecto Robusto de Gestión con portacion y exportacion en PDF y Excel",
+    proj1Desc: "Una aplicación de gestión robusta con autenticación segura impulsada por Spring Security, con capacidades de exportación de datos en formatos PDF y Excel.",
+    proj2Title: "Tienda web con Django",
+    proj2Desc: "Una tienda virtual creada con Django, con gestión de productos, autenticación de usuarios y una arquitectura escalable para soluciones de comercio electrónico.",
     proj3Title: "Chat Spring + Angular",
     proj3Desc: "Chat en tiempo real con WebSocket (backend Spring Boot y frontend Angular).",
     proj4Title: "App BookStore",
@@ -66,9 +66,9 @@ const translations = {
 
     // Projects
     proj1Title: "PDF & Excel Management",
-    proj1Desc: "Management app that allows exporting data in PDF and Excel formats.",
-    proj2Title: "Space Invaders Game",
-    proj2Desc: "Classic Java game focusing on graphics logic and gameplay.",
+    proj1Desc: "A robust management application with secure authentication powered by Spring Security, featuring data export capabilities in both PDF and Excel formats.",
+    proj2Title: "Web Store with Django",
+    proj2Desc: "A virtual store built with Django, featuring product management, user authentication, and a scalable architecture for e-commerce solutions.",
     proj3Title: "Chat Spring + Angular",
     proj3Desc: "Real-time chat with WebSocket (Spring Boot backend and Angular frontend).",
     proj4Title: "BookStore App",
