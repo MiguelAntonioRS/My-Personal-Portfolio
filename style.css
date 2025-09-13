@@ -309,7 +309,7 @@ footer {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 3px solid #007acc;
+  border: 3px solid var(--bg);
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -472,7 +472,7 @@ body.light .proj {
   right: -300px; /* Fuera de pantalla */
   width: 280px;
   height: 100%;
-  background: #0f172a; /* Fondo sólido oscuro */
+  background: var(--bg); /* Fondo sólido oscuro */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
   z-index: 2000;
