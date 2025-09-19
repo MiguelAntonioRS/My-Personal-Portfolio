@@ -58,21 +58,21 @@ html {
   border-bottom: 1px solid rgba(255,255,255,0.1);
   color: #fff;
 }
-.nav-links {
+.nav-links-desktop-only {
   display: flex;
   gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.nav-links a {
+.nav-links-desktop-only a {
   color: #fff; 
   font-weight: 600;
   text-transform: uppercase;
   transition: color 0.3s;
   font-size: 0.95rem;
 }
-.nav-links a:hover {
+.nav-links-desktop-only a:hover {
   color: var(--secondary);
 }
 .nav-actions {
@@ -104,7 +104,7 @@ html {
     flex-wrap: wrap;
     padding: 10px;
   }
-  .nav-links {
+  .nav-links-desktop-only {
     width: 100%;
     justify-content: center;
     margin-bottom: 10px;
