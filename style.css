@@ -688,3 +688,30 @@ body.light .proj {
 .mobile-menu-content {
   padding: 20px;
 }
+/* Alinear botones de tema e idioma */
+.mobile-nav-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px; /* Espacio entre botones y el menú */
+  padding-top: 15px;
+}
+
+.mobile-nav-actions button {
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-actions button:hover {
+  background: var(--secondary);
+  color: #fff;
+}
