@@ -483,6 +483,7 @@ body.light .proj {
 
 .mobile-menu.active {
   right: 0; /* Desliza hacia dentro */
+  background: var(--bg);
 }
 
 .mobile-menu-content {
@@ -649,4 +650,40 @@ body.light .proj {
 /* Opcional: hace la transición del mobile-menu un poco más suave */
 .mobile-menu, .mobile-menu.active {
   transition: right 0.28s cubic-bezier(.2,.9,.3,1), background .2s;
+}
+/* Opcional: hace la transición del mobile-menu un poco más suave */
+.mobile-menu, .mobile-menu.active {
+  transition: right 0.28s cubic-bezier(.2,.9,.3,1), background .2s;
+}
+
+/* ===== FIX DEFINITIVO PARA MENÚ MÓVIL ===== */
+
+/* Forzar visibilidad en móvil */
+@media (max-width: 767px) {
+  .mobile-menu {
+    display: block !important;
+    right: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    overflow-y: auto;
+    background: rgba(15, 23, 42, 0.98) !important;
+    backdrop-filter: none !important;
+  }
+
+  .mobile-menu.active {
+    display: block !important;
+    right: 0 !important;
+    background: rgba(15, 23, 42, 0.98) !important;
+  }
+}
+
+/* Asegurar que el contenido sea visible */
+.mobile-menu .mobile-nav-links a {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.mobile-menu-content {
+  padding: 20px;
 }
