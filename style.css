@@ -663,12 +663,13 @@ body.light .proj {
   .mobile-menu {
     display: block !important;
     right: -100%;
-    width: 85%;
+    width: 280px;
     max-width: 320px;
     height: 100vh;
     overflow-y: auto;
     background: rgba(15, 23, 42, 0.98) !important;
-    backdrop-filter: none !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .mobile-menu.active {
